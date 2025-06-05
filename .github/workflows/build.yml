@@ -61,9 +61,10 @@ jobs:
           add-to-path: false
 
       - name: Install Libraries
+        shell: bash
         run: |
-          haxelib install hmm --quiet
-          haxelib run hmm install --quiet
+          haxelib install hmm --quiet > >(tee /dev/null) 2> >(tee /dev/null >&2)
+          haxelib run hmm install --quiet > >(tee /dev/null) 2> >(tee /dev/null >&2)
         env:
           GITHUB_TOKEN: ${{ secrets.PSYCHONLINE_PAT }}
 
