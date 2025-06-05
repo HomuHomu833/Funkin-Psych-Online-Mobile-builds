@@ -18,6 +18,11 @@ on:
       artifactPath:
         required: true
         type: string
+    secrets:
+      PSYCHONLINE_REPO:
+        required: true
+      PSYCHONLINE_PAT:
+        required: true
 
 env:
   HAXE_VERSION: 4.3.7
