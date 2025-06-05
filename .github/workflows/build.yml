@@ -30,6 +30,9 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@main
+        with:
+          repository: ${{ secrets.PSYCHONLINE_REPO }}
+          token: ${{ secrets.PSYCHONLINE_PAT }}
 
       - name: Setup Haxe
         if: inputs.name != 'Linux ARM64'
