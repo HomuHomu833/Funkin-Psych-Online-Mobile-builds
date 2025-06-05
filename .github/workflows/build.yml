@@ -68,10 +68,8 @@ jobs:
       - name: Install Libraries
         shell: bash
         run: |
-          haxelib install hmm --quiet > >(tee /dev/null) 2> >(tee /dev/null >&2)
-          haxelib run hmm install --quiet > >(tee /dev/null) 2> >(tee /dev/null >&2)
-        env:
-          GITHUB_TOKEN: ${{ secrets.PSYCHONLINE_PAT }}
+          haxelib install hmm --quiet
+          haxelib run hmm install --quiet
 
       - name: Configure Android
         if: inputs.name == 'Android'
